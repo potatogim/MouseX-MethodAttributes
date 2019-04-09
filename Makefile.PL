@@ -1,6 +1,7 @@
 use strict;
 use warnings FATAL => 'all';
 use ExtUtils::MakeMaker;
+use ExtUtils::MakeMaker::Coverage;
 
 WriteMakefile(
     NAME               => 'MouseX::MethodAttributes',
@@ -15,11 +16,11 @@ WriteMakefile(
         'ExtUtils::MakeMaker' => 0,
     },
     PREREQ_PM => {
-        'utf8'                   => 0,
-        'strict'                 => 0,
-        'warnings'               => 0,
-        'overload'               => 0,
-        'Mouse'                  => 0,
+        'utf8'     => 0,
+        'strict'   => 0,
+        'warnings' => 0,
+        'overload' => 0,
+        'Mouse'    => 0,
     },
     TEST_REQUIRES => {
         'utf8'         => 0,
@@ -33,7 +34,7 @@ WriteMakefile(
     },
     PL_FILES => {},
     clean => {
-        FILES => 'MouseX-MethodAttributes-*',
+        FILES => ['MouseX-MethodAttributes-*', 'cover_db'],
     },
     test => {
         TESTS => 't/*.t',
